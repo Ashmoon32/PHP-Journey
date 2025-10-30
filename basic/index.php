@@ -107,7 +107,7 @@
     echo"<br>-----------------------------------------------------<br>";
 
     $users = ["alice", "bob"];
-    echo is_array($users); // if array return '1', if not empty
+    echo is_array($users); // check it is array or not ,if array return '1', if not empty
 
      echo "<br>-----------------------------------------------------<br>";
 
@@ -118,6 +118,34 @@
       $users1 = ["tom", "bob", "alice"];
 
       echo array_search("alice", $users1); // not only check the value exist or not , if exit return index of that value .
+      
+        echo "<br>-----------------------------------------------------<br>";
+
+      $users = ["alice", "bob"];
+
+      array_push($users, "tom");
+
+      print_r($users);
+
+        echo "<br>-----------------------------------------------------<br>";
+
+    array_pop($users);
+
+    print_r($users);
+    
+      echo "<br>-----------------------------------------------------<br>";
+
+      array_shift($users);
+
+      print_r($users);
+
+        echo "<br>-----------------------------------------------------<br>";
+
+    array_unshift($users, "Han");
+
+    print_r($users);
  ?>
+
+
 </body>
 </html>
