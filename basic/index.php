@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PHP | Practice</title>
 </head>
 <body>
 <?php 
@@ -144,6 +144,75 @@
     array_unshift($users, "Han");
 
     print_r($users);
+
+      echo "<br>-----------------------------------------------------<br>";
+
+      $users2 = ["Han", "Win", "Wai"];
+      $result = array_splice($users2, 1, 1); // Splice index 1 and 1 value "Win" From array
+
+      print_r($users2); // Han, Wai
+
+        echo "<br>-----------------------------------------------------<br>";
+
+      print_r($result); // Win
+
+        echo "<br>-----------------------------------------------------<br>";
+
+        $users3 = ["name" => "Han", "age" => 22];
+
+        $keys = array_keys($users3); // get keys only - name, age
+        $values = array_values($users3); // get values only - Han, 22
+
+        print_r($keys);
+
+          echo "<br>-----------------------------------------------------<br>";
+
+        print_r($values);
+
+          echo "<br>-----------------------------------------------------<br>";
+
+        $users4 = ["tom" => 23, "bob" => 22, "alice" => 24];
+        sort($users4); // sorting array's value
+        print_r($users4);
+          echo "<br>-----------------------------------------------------<br>";
+
+          // sort with index(key)
+        $users4 = ["tom" => 23, "bob" => 22, "alice" => 24];
+        ksort($users4);
+
+        print_r($users4);
+
+        echo "<br>-----------------------------------------------------<br>";
+
+        $users4 = ["tom" => 23, "bob" => 22, "alice" => 24];
+        krsort($users4);
+        print_r($users4);
+
+        echo "<br>-----------------------------------------------------<br>";
+
+
+
+        // reverse sorting
+        $users4 = ["tom" => 23, "bob" => 22, "alice" => 24];
+        rsort($users4);
+
+        print_r($users4);
+
+        echo "<br>-----------------------------------------------------<br>";
+
+        // explode() and implode()
+
+        $input = "A quick brown fox";
+        $arr = explode(" ", $input); // make a string to array splice with space and the result - ["A","quick"."brown","fox"]
+
+        print_r($arr);
+
+         echo "<br>-----------------------------------------------------<br>";
+
+        $str = implode(" ", $arr);
+
+        echo $str;
+
  ?>
 
 
