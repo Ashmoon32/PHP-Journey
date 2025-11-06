@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button onclick="getMessage()">Request</button>
+    <p id="msg"></p>
+    
+    <script>
+        async function getMessage() {
+            const res = await fetch('message.php');
+            const message = await res.message();
+            document.getElementById('msg').innerText = message;
+        }
+    </script> -->
+
+
+<button onclick="getMessage()">Click Me</button>
+<p id="msg"></p>
+
+<script>
+    async function getMessage() {
+        const res = await fetch('message.php');
+        const text = await res.text();
+        document.getElementById('msg').innerText = text;
+    }
+</script>
+
+</body>
+</html>
