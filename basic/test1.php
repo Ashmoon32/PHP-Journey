@@ -375,8 +375,117 @@ echo strlen($passion);
         echo "<br>".$x."<br>";
         echo "<br>".$y."<br>";
         
+        $x = 3;
+        $y = $x--;
+        echo "<br>".$x."<br>";
+        echo "<br>".$y."<br>";
 
+        $x = 3;
+        $y = --$x;
+        echo "<br>".$x."<br>";
+        echo "<br>".$y."<br>";
+
+        echo 5 == "5";
+        echo 5 != "6";
+        echo 5 === "5";
+
+        echo 5 <> 6;
+
+        echo "<br>---<br>";
+
+        echo 5 <=> 4;
+        echo "<br>---<br>";
+        echo 5 <=> 5;
+        echo "<br>---<br>";
+        echo 5 <=> 6;
+        echo "<br>---<br>";
+        echo 5 !== 6;
+
+        echo "<br>-----------------------------<br>";
+
+
+        $x = 3;
+        $y = 5;
+
+        echo $x === $y || $x === 3;
+        echo $x === $y or $x === 3;
+
+        echo $x !== $y && $x === 3;
+        echo $x !== $y and $x === 3;
+
+        echo !($x === $y or $x === 3);
+        echo !($x === $y and $x === 3);
+
+        echo "<br>---------------------------------<br>";
+        // xor
+        echo $x < $y or $x === 3;
+        echo $x < $y xor $x === 3;
+
+        echo "<div>------------------------------</div>";
+
+        $name = "";
+        echo $name ? $name : "Unknown";
+
+        echo "<div>------------------------------</div>";
+
+        $name = "Alice";
+        echo $name ? $name : "Unknown";
+
+        # short hand
+
+        echo "<div>------------------------------</div>";
+
+        $name = "";
+        echo $name ?: "Unknown";
+
+        echo "<div>------------------------------</div>";
+
+        $name = "Alice";
+        echo $name ?: "Unknown";
+
+        echo "<div>------------------------------</div>";
+
+?>
+<?php
+        $name = "";
+        echo isset($name) ? $name : "Unknown";
+
+        echo "<div>------------------------------</div>";
+
+        echo $name ?? "Unknown";
+
+        echo "<div>------------------------------</div>";
+
+        $result = "Alice";
+        $name = "Ashmoon";
+        $result ??= $name;
+        echo $name;
+        echo $result;
     ?>
+
 </p>
+
+<?php
+    $time = date("h");
+
+    if( $time > 6 && $time < 18) echo "Day Time!";
+
+    else echo "Night Time!";
+
+    echo "<div>--------------------------------</div>";
+
+    $day = date('D');
+
+    if($day === "Sun") {
+        echo "Today is Sunday.";
+    } else if($day === "Sat") {
+        echo "Today is Saturday.";
+    } else {
+        echo "Today is weekend.";
+    }
+
+?>
+
+
 </body>
 </html>
