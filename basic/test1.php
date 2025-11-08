@@ -303,8 +303,77 @@ echo strlen($passion);
         echo "<div>------------------------</div>";
         
 
+ echo "<div>------------------------</div>";
 
 
+        $data = ["Apple", "Orange"];
+        $NAME = "Ashmoon";
+        $greet = "Welcome";
+
+        echo "Hello Worldddd";
+        echo $NAME ." ". $greet;
+
+        echo $data[0] . " and " . $data[1];
+
+        echo $data[0], " and " , $data[1];
+
+        echo "<div>-------------------------------</div>";
+
+        echo 5 % 3;
+        echo 5 ** 3;
+
+        // Hello this is a comment
+        /* Hello
+        this is also
+        a comment but with
+        multiple lines
+        */
+        
+        # This is another way for single line comment
+
+        $num = 5;
+        echo "<br>".$num."<br>";
+        
+        $num += 5; # 10
+        echo "<br>".$num."<br>";
+
+        $num -= 5; # 5
+        echo "<br>".$num."<br>";
+
+        $num *= 5; # 25
+        echo "<br>".$num."<br>";
+
+        $num /= 5; # 5
+        echo "<br>".$num."<br>";
+
+        $num %= 5; # 0
+        echo "<br>".$num."<br>";
+
+        $num = 5;
+        $num **= 5;
+        echo "<br>".$num."<br>";
+
+        $greet = "Hello";
+        $name = "Ashmoon";
+        $blabla = "bla bla!";
+        $space = " ";
+
+        $greet .= $space;
+        $greet .= $name;
+        $greet .= $space;
+        $greet .= $blabla;
+
+        echo "<br>".$greet."<br>";
+
+        $x = 3;
+        $y = $x++;
+        echo "<br>".$x."<br>";
+        echo "<br>".$y."<br>";
+
+        $x = 3;
+        $y = ++$x;
+        echo "<br>".$x."<br>";
+        echo "<br>".$y."<br>";
         
 
     ?>
