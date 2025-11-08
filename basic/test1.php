@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Testing & Practice | PHP</title>
 </head>
 <body>
    <h1>Home Page</h1>
@@ -200,6 +200,114 @@ echo strlen($passion);
             echo $name;
       
       ?>
+</p>
+
+<br><hr><br>
+
+<p>
+    <?php
+        $user1 = [1,2];
+        $user3 = [4, 5, 6];
+        $user2 = [...$user1, 3, ...$user3];
+        print_r($user2);
+
+        echo "<div>------------------------</div>";
+
+        echo count($user2);
+
+        echo "<div>------------------------</div>";
+
+        echo is_array($user2);
+
+        echo "<div>------------------------</div>";
+
+        echo in_array(5, $user2);
+
+        echo "<div>------------------------</div>";
+
+        echo array_search(3, $user2);
+
+        echo "<div>------------------------</div>";
+
+        array_push($user2, "blablabla");
+        print_r($user2);
+
+        echo "<div>------------------------</div>";
+
+        array_pop($user2);
+        print_r($user2);
+
+        echo "<div>------------------------</div>";
+
+        array_unshift($user2, "blablabla");
+        print_r($user2);
+
+        echo "<div>------------------------</div>";
+
+        array_shift($user2);
+        print_r($user2);
+
+        echo "<div>------------------------</div>";
+
+        $a = ["Alice", "Bob", "John"];
+        $b = array_splice($a, 1, 1);
+        print_r($b);
+        print_r($a);
+
+        echo "<div>------------------------</div>";
+
+        $C = ["Name" => "Blablabla", "Age" => 20];
+
+        $key = array_keys($C);
+        $value = array_values($C);
+
+        print_r($key);
+        echo "<div>------------------------</div>";
+        print_r($value);
+
+        echo "<div>------------------------</div>";
+
+
+        $Group = ["tom" => 23, "alice" => 25, "job" => 24];
+        sort($Group);
+        print_r($Group);
+        echo "<div>------------------------</div>";
+
+
+        $Group = ["tom" => 23, "alice" => 25, "job" => 24];
+        rsort($Group);
+        print_r($Group);
+        echo "<div>------------------------</div>";
+
+
+        $Group = ["tom" => 23, "alice" => 25, "job" => 24];
+        ksort($Group);
+        print_r($Group);
+        echo "<div>------------------------</div>";
+
+
+        $Group = ["tom" => 23, "alice" => 25, "job" => 24];
+        krsort($Group);
+        print_r($Group);
+        echo "<div>------------------------</div>";
+
+        $greetingStr = "Hello! I am Ashmoon...";
+        $arr = explode(" ", $greetingStr);
+        print_r($arr);
+
+        echo "<div>------------------------</div>";
+
+        $str = implode(" ",$arr);
+        print_r($str);
+        
+        echo "<div>------------------------</div>";
+        
+
+
+
+        
+
+    ?>
 </p>
 </body>
 </html>
