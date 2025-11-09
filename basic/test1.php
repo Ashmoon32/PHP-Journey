@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testing & Practice | PHP</title>
+    <link rel="shortcut icon" href="./mylove.jpg" type="image/x-icon">
+    <style>
+        body {
+            background: url("mylove.jpg");
+            font-size: 1.5rem;
+            color: red;
+        }
+    </style>
 </head>
 <body>
    <h1>Home Page</h1>
@@ -589,12 +597,146 @@ echo strlen($passion);
 
     $user = [ "Alice" => 20, "Bob" => 21];
     $result = [];
+    $result1 = array_keys($user);
 
     foreach($user as $name => $point) {
         $result[] = $name;
     }
 
     print_r($result);
+    print_r($result1);
+
+    echo "<div>--------------------------------</div>";
+
+    // function add($a, $b) {
+    //     echo $a + $b;
+    // }
+
+    // add(1, 2);
+
+    echo "<div>--------------------------------</div>";
+
+    function add1($a,   ...$b) {
+        print_r($b);
+    }
+
+    add1(1, 2, 3, 4, 5);
+
+    echo "<div>--------------------------------</div>";
+
+    # old way 
+
+    function add2( ){
+        $args = func_get_args();
+        print_r($args);
+    }
+
+    add2(1, 2, 3, 4, 5);
+
+    echo "<div>--------------------------------</div>";
+
+    function add3(Array $nums): float {
+        return array_sum($nums);
+    }
+
+    echo add3([1, 2]);
+
+    echo "<div>--------------------------------</div>";
+
+    function price( int | float $n) {
+        return "Price is \$$n";
+    }
+
+    echo price(3.1);
+    echo price(2);
+
+    echo "<div>--------------------------------</div>";
+
+    // Pass by Value
+    $name = "Alice";
+    function greet($n) {
+        $n = "Bob";
+        echo "Hello $n";
+    }
+
+    greet($name);
+    echo "<div>--------------------------------</div>";
+    echo $name;
+    echo "<div>--------------------------------</div>";
+
+    // Pass by Reference
+
+    $name = "Alice";
+    function greet1(&$n) {
+        $n = "Bob";
+        echo "Hello $n";
+    }
+
+
+        greet1($name);
+        echo "<div>--------------------------------</div>";
+        echo $name;
+        echo "<div>--------------------------------</div>";
+
+    function one(){
+        function two() {
+            echo "Hello World";
+        }
+        echo "Hello World....";
+    }
+
+    one();
+    echo "<div>--------------------------------</div>";
+    two();
+    echo "<div>--------------------------------</div>";
+
+    $name = "Alice";
+
+    function hello() {
+        global $name;
+        $name = "Bob";
+        echo $name;
+    }
+
+    hello();
+    echo $name;
+
+    echo "<div>--------------------------------</div>";
+
+    // function ‌abcdefg($a, $b) {
+    //     echo $a + $b;
+    // }
+
+    // $name12 = "abcdefg";
+    // $name12(2 ,2);
+
+    function addd($a, $b) {
+    echo $a + $b;
+    }
+    $name = "addd";
+    $name(1, 2);
+
+    echo "<div>--------------------------------</div>";
+    echo "<div>--------------------------------</div>";
+    echo "<div>--------------------------------</div>";
+
+    $num3 = [ 1, 2, 3, 4, 5];
+
+    function Two($n) {
+        return $n * 2;
+    }
+
+    $result3 = array_map("Two", $num3);
+
+    print_r($result3);
+
+    echo "<div>--------------------------------</div>";
+    
+
+    
+        
+
+
 
 ?>
 
