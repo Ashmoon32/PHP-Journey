@@ -46,11 +46,51 @@
     <?php 
         $name = "Ashmoon";
         $hello = function() use ($name) {
+            $name = "bob";
             echo "Hello $name!";
         };
 
         $hello();
-    
+        echo $name;
+
+        ?>
+
+        <br><hr><br>
+        <?php
+
+        $two = fn ($n) => $n * 2;
+
+        echo $two(3);
+
+
+        ?>
+
+        <br><hr><br>
+
+        <?php
+    $x = 4;
+    $add11 = fn($y) => $y + $x;
+
+    echo $add11(3);
+    ?>
+
+    <hr><br>
+
+    <?php 
+        function profile($name, $age, $email) {
+            echo "$name ($age) @ $email";
+        }
+
+        profile("Alice", 20, "alice3021@gmail.com")
+    ?>
+
+    <br><hr>
+    <?php 
+        profile(
+            age: 21,
+            name: "blabla",
+            email: "blabla21@gmail.com",
+        )
     ?>
 
 </body>
