@@ -484,6 +484,118 @@ echo strlen($passion);
         echo "Today is weekend.";
     }
 
+    echo "<div>--------------------------------</div>";
+
+    $day = date('D');
+
+    switch($day) {
+        case 'Sun':
+        case 'Sat':
+            echo "Weekend!";
+            break;
+
+        case 'Fri':
+            echo "TGIF";
+            break;
+        
+        default :
+            echo "Weekday";
+    }
+
+    echo "<div>--------------------------------</div>";
+
+    $day = date('D');
+
+    $result = match($day) {
+        "Sat","Sun" => "Weekend",
+        "Fri" => "TGIF",
+         default => "Weekday",
+    };
+
+    echo $result;
+
+    echo "<div>--------------------------------</div>";
+
+    $num = [ 12, 42, -2, 8, 621];
+
+    $i = 0;
+    $result = 0;
+
+    while ($i < count($num) ) {
+        $result += $num[$i];
+        $i++;
+    }
+
+    $result1 = array_sum($num);
+    echo $result1;
+    echo $result;
+
+    echo "<div>--------------------------------</div>";
+
+    $num = [12, 42, -2, 8, 621];
+
+    $i = 0;
+    $result = 0;
+
+    while($i < count($num) ) {
+        if($num[$i] < 0){
+            $i++;
+            break;
+        }
+
+        $result += $num[$i];
+        $i++;
+    }
+
+    echo $result;
+
+    echo "<div>--------------------------------</div>";
+
+    $num = [12, 42, -2, 8, 621];
+
+    $i = 0;
+    $result = 0;
+
+    do {
+        $result += $num[$i];
+        $i++;
+    } while( $i > count($num));
+
+    echo $result;
+
+    echo "<div>--------------------------------</div>";
+
+    $num = [1, 2, 3, 4, 5, -6];
+    $result = 0;
+
+    for($i = 0; $i < count($num); $i++) {
+        $result += $num[$i];
+    }
+
+    echo $result;
+
+    echo "<div>--------------------------------</div>";
+
+    $nums = [1, 2, 3, 4, 5, -6];
+    $result = 0;
+
+    foreach($nums as $num) {
+        $result += $num;
+    }
+
+    echo $result;
+
+    echo "<div>--------------------------------</div>";
+
+    $user = [ "Alice" => 20, "Bob" => 21];
+    $result = [];
+
+    foreach($user as $name => $point) {
+        $result[] = $name;
+    }
+
+    print_r($result);
+
 ?>
 
 
