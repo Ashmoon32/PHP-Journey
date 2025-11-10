@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testing & Practice | PHP</title>
-    <link rel="shortcut icon" href="./mylove.jpg" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="./mylove.jpg" type="image/x-icon">
     <style>
         body {
             background: url("mylove.jpg");
             font-size: 1.5rem;
             color: red;
         }
-    </style>
+    </style> -->
 </head>
 <body>
    <h1>Home Page</h1>
@@ -722,23 +722,78 @@ echo strlen($passion);
 
     $num3 = [ 1, 2, 3, 4, 5];
 
-    function Two($n) {
-        return $n * 2;
-    }
+    // function Two($n) {
+    //     return $n * 2;
+    // }
 
-    $result3 = array_map("Two", $num3);
+    // $result3 = array_map("Two", $num3);
 
-    print_r($result3);
+    // print_r($result3);
 
     echo "<div>--------------------------------</div>";
-    
 
-    
-        
-
-
-
+    echo "hello world!";
 ?>
+
+ <br><hr><br><hr><br><hr>
+
+ <h1>Object Oriented Programming(OOP)</h1>
+
+ <br><hr><br>
+
+ <?php 
+        class Animal {
+            public $name;
+                public function __construct() {
+                    echo "Hello there...";
+                }    
+
+            static $type = "Mammal";
+
+            static function info(){
+                echo "Group:" . static::$type;
+            }
+        }
+
+        echo Animal::$type;
+        Animal::info();
+
+        $dog = new Animal;
+
+        // var_dump($dog);
+
+        // $dog->name = "Boob";
+        // $dog->run();
+
+
+        class Animal2 {
+            private $name;
+                public function  __construct($name) {
+                    $this->name = $name;
+                }
+
+                public function run() {
+                    echo "$this->name is running...";
+                }
+        }
+
+        $dog = new Animal2("Bob");
+
+        $dog->run();
+
+        class Animal3 {
+            public function __construct(private $name) {
+
+            }
+
+            public function run() {
+                echo "$this->name is running";
+            }
+        }
+
+        $cat = new Animal3("Kel Kel");
+        $cat->run();
+ ?>
 
 
 </body>
