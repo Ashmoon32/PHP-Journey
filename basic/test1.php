@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testing & Practice | PHP</title>
-    <!-- <link rel="shortcut icon" href="./mylove.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="./mylove.jpg" type="image/x-icon">
     <style>
         body {
             background: url("mylove.jpg");
             font-size: 1.5rem;
             color: red;
         }
-    </style> -->
+    </style>
 </head>
 <body>
    <h1>Home Page</h1>
@@ -794,6 +794,209 @@ echo strlen($passion);
         $cat = new Animal3("Kel Kel");
         $cat->run();
  ?>
+
+ <br><hr><br>
+
+ <!-- OOP - Inheritance -->
+
+    <?php 
+            class Animal4 {
+                private $name;
+                
+                public function __construct($name) {
+                    $this->name = $name;
+                }
+
+                public function run() {
+                    echo "$this->name is running...";
+                }
+            }
+
+            class Dog2 extends Animal4 {
+                public function bark() {
+                    echo "Woof.. Woof...";
+                }
+            }
+
+            $bob = new Dog2("Bobby");
+            $bob->run();
+            $bob->bark();
+    
+    ?>
+
+    <br><hr><br>
+
+    <?php
+    
+            class Animal6 {
+                protected $name;
+
+                public function __construct($name) {
+                    $this->name = $name;
+                }
+
+                public function run() {
+                    echo "$this->name is running..";
+                }
+
+            }
+
+            class Dog extends Animal6 {
+
+                public function bark() {
+                    echo "$this->name is barking...";
+                }
+            }
+
+            $dog = new Dog("Aung Net");
+            $dog->run();
+            $dog->bark();
+    
+    ?>
+
+
+    <br><hr><br>
+
+    <!-- PHP doesn't allow multiple inheritance like this 
+
+    class Dog extends Animal, Mammal, Domestic -->
+
+    <?php 
+            class Animal5 {
+                static function info() {
+                    echo "Animal Class";
+                }
+            }
+
+            class Dogg extends Animal5 {
+                //
+            }
+
+            class Fox extends Dogg {
+                //
+            }
+
+        Fox::info();
+    ?>
+
+    <br><hr><br>
+
+    <?php 
+
+        class Animal7 {
+            protected $name;
+
+            public function __construct($name) {
+                $this->name = $name;
+            }
+
+            # if final, it doesn't accept to override.
+            final public function run() {
+                echo "$this->name is running...";
+            }
+        }
+
+        class Dog3 extends Animal7 {
+
+            private $color;     
+
+            public function __construct($name, $color) {
+
+                parent::__construct($name);
+                $this->color = $color;
+            }
+
+            
+            public function profile() {
+                echo "$this->name has $this->color color.";
+            }
+
+        /*  public function run() {
+                echo "The dog is running...";
+            }
+        */
+
+        }
+
+        $bobby = new Dog3("Bobby", "Black");
+        $bobby->profile();
+    
+    ?>
+
+   
+    <br><hr><br>
+
+     <!-- Abstract class -->
+ 
+     <?php 
+        
+        // abstract class Animal8 {
+
+        //     public abstract function talk();
+
+        //     public function run() {
+        //         echo "Running...";
+        //     }
+        // }
+
+        // class Dog5 extends Animal8 {
+            
+        // }
+
+        class Dog10 {
+            public function run() {
+                echo "The dog is running...";
+            }
+        }
+
+        class Fish {
+            public function swim() {
+                echo "The fish is swimming...";
+            }
+        }
+
+        function app(Dog10 $obj) {
+            $obj->run();
+        }
+
+        app (new Dog10);
+        // app (new Fish);
+     
+     ?> 
+
+     <br><hr><br>
+
+     <?php 
+        interface Animal11 
+        {
+            public function move();
+        }
+
+        class Dog11 implements Animal11
+        {
+            public function move()
+            {
+                echo "The dog is running";
+            }
+        }
+
+        class Fish2 implements Animal11 
+        {
+            public function move()
+            {
+                echo "The fish is swimming";
+            }
+        }
+
+        function app2(Animal11 $obj)
+        {
+            $obj->move();
+        }
+
+        app2(new Dog11);
+        app2(new Fish2);
+     
+     ?>
 
 
 </body>
