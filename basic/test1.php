@@ -998,6 +998,134 @@ echo strlen($passion);
      
      ?>
 
+     <br><hr><br>
+
+     <?php
+     
+        interface Animal12
+        {
+            public function move();
+        }
+
+        interface Livestock
+        {
+            public function isFriendly();
+        }
+
+        class Cow implements Animal12, Livestock 
+        {
+            public function move()
+            {
+                echo "The cow is walking...";
+            }
+
+            public function isFriendly()
+            {
+                return true;
+            }
+        }
+     ?>
+
+     <br><hr><br>
+
+     <?php
+
+        trait Math 
+        {
+            public function add6($a, $b) 
+            {
+                echo $a + $b;
+            }
+        }
+
+        trait Area
+        {
+            private $PI = 3.142;
+
+            public function circle($r)
+            {
+                echo $this->PI * $r * $r;
+            }
+        }
+
+        class Calculator
+        {
+            use Math, Area;
+        }
+
+        $calc = new Calculator;
+        $calc->add6( 1, 2);
+        echo "<br>";
+        $calc->circle(5);
+     ?>
+
+     <br><hr><br>
+
+        <!-- Megic Method -->
+
+    <?php
+        
+        class Maths 
+        {
+
+            private $PI = 3.142857;
+
+            public function __toString()
+            {
+                return "PI = $this->PI";
+            }
+
+            public function __get($name)
+            {
+                echo "Cannot get $name!";
+            }
+
+            public function __set($name, $value)
+            {
+                echo "Cannot set $name with $value!";
+            }
+
+            public function __call($name, $args)
+            {
+                echo "Method $name doesn't exists!";
+            }
+
+            static function __callStatic($name, $args)
+            {
+                echo "Static method $name doesn't exists!";
+            }
+
+            public function __invoke()
+            {
+                echo "This is not a function!";
+            }
+        }
+
+        $obj = new Maths;
+        $obj->add();
+
+        echo "<br><br>";
+
+        Maths::add();
+
+        echo "<br><br>";
+
+        $obj();
+
+        echo "<br><br>";
+
+        $obj->PI;
+
+        echo "<br><br>";
+
+        $obj->PI = 3.142;
+
+        echo "<br><br>";
+
+        echo $obj;
+
+    
+    ?>
 
 </body>
 </html>
