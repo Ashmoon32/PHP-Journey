@@ -36,6 +36,46 @@ $result = add(1,2);
 echo $result;
 
 
-function add1($a, $b){
 
+function substract($a, ...$c) {
+    print_r($c);
 }
+
+
+substract(1, 2, 3, 4, 5, 6);
+
+function add3(Array $nums) : float {
+    return array_sum($nums);
+}
+
+echo add3([2,2]), "\n";
+
+function price(string|int|float $n) {
+    return "Price is \$$n";
+}
+
+echo price(2) , "\n";
+echo price(3.1)  , "\n";
+echo price("abcd"), "\n";
+
+
+$stu_age = "Mg Mg";
+function name(&$n){
+    $n = "Ko Ko";
+    echo $n;
+}
+
+name($stu_age);
+echo "\n", $stu_age, "\n";
+
+echo "\n-----------------------------------\n";
+
+$nums = [1, 2, 3, 4, 5];
+
+function two($n) {
+    return $n * 2;
+}
+
+$result = array_map("two", $nums);
+
+print_r($result);
