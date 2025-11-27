@@ -67,9 +67,17 @@ trait Area
     }
 }
 
+trait Escape
+{
+    public function exit()
+    {
+        echo "Bye Bye.. Have a great day!\n";
+    }
+}
+
 class Calculator
 {
-    use Math, Area;
+    use Math, Area, Escape;
 
     public function __construct()
     {
@@ -82,6 +90,7 @@ class Calculator
         3. Multiplication
         4. Division
         5. Area of Circle
+        6. Exit
         \n";
         echo "---------------------------------------------------------\n";
 
@@ -89,41 +98,53 @@ class Calculator
 }
 
 $calculator = new Calculator;
-$choice = readline("Enter your choice : ");
-    switch($choice)
+
+    do
+    {
+        $choice = 0;
+        while(!($choice == 6))
         {
-            case 1:
-                $calculator->add(
-                    $num1 = readline("Enter your first number: "),
-                    $num2 = readline("Enter your second number: ")
-                );
-                break;
-            
-            case 2:
-                $calculator->subtract(
-                    $num1 = readline("Enter your first number: "),
-                     $num2 = readline("Enter your second number: ")
-                );
-                break;
-            case 3:
-                $calculator->multiply(
-                    $num1 = readline("Enter your first number: "),
-                     $num2 = readline("Enter your second number: ")
-                );
-                break;
-            case 4:
-                $calculator->divide(
-                    $num1 = readline("Enter your first number: "),
-                     $num2 = readline("Enter your second number: ")
-                );
-                break;
+            $choice = readline("Enter your choice : ");
+            switch($choice)
+            {
+                case 1:
+                    $calculator->add(
+                        $num1 = readline("Enter your first number: "),
+                        $num2 = readline("Enter your second number: ")
+                    );
+                    break;
+                
+                case 2:
+                    $calculator->subtract(
+                        $num1 = readline("Enter your first number: "),
+                        $num2 = readline("Enter your second number: ")
+                    );
+                    break;
+                case 3:
+                    $calculator->multiply(
+                        $num1 = readline("Enter your first number: "),
+                        $num2 = readline("Enter your second number: ")
+                    );
+                    break;
+                case 4:
+                    $calculator->divide(
+                        $num1 = readline("Enter your first number: "),
+                        $num2 = readline("Enter your second number: ")
+                    );
+                    break;
 
-            case 5:
-                $calculator->circle(
-                    $radius = readline("Enter radius: ")
-                );
-                break;
+                case 5:
+                    $calculator->circle(
+                        $radius = readline("Enter radius: ")
+                    );
+                    break;
+                
+                case 6:
+                    $calculator->exit();
+                    break;
 
-            default :
-                echo "Invalid choice! Please Enter the choice from 1 to 5.\n";         
+                default :
+                    echo "Invalid choice! Please Enter the number for choice from 1 to 5.\n";         
+            }
         }
+    } while (!(is_numeric($choice)));
