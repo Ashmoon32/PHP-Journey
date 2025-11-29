@@ -1,0 +1,17 @@
+{
+    "name": "ser/php-journey",
+    "autoload": {
+        "psr-4": {
+            "Ser\\PhpJourney\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ashmoon32",
+            "email": "nyeinmaung3021@gmail.com"
+        }
+    ],
+    "require": {
+        "fakerphp/faker": "^1.24"
+    }
+}
