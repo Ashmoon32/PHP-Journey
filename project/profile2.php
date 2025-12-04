@@ -20,20 +20,19 @@
     </head>
     <body>
         <div class="container mt-5">
-            <h1 class="mb-3">Ashmoon (Back End Engineer)</h1>
+            <h1 class="mb-3">Nyein Maung (Front End Engineer)</h1>
             <ul class="list-group">
                 <li class="list-group-item">
-                    <b>Email:</b> ashmoon32@gmail.com
+                    <b>Email:</b> nyeinmaung32@gmail.com
                 </li>
                 <li class="list-group-item">
-                    <b>Phone:</b> (09) 798 382 273
+                    <b>Phone:</b> (09) 323 425 524
                 </li>
                 <li class="list-group-item">
-                    <b>Address:</b> No. 708, TaKaung Street, Yangon City
+                    <b>Address:</b> No. 709, Main Street, Mandalay City
                 </li>
             </ul>
             <br>
-            
             <a href="_actions/logout.php">Logout</a>
         </div>
     </body>
