@@ -26,7 +26,7 @@ class MySQL
         $this->db = null;
     }
 
-    public function connet()
+    public function connect()
     {
         try {
             $this->db = new PDO(
