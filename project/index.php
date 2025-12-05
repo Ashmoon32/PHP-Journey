@@ -11,6 +11,20 @@
             max-width: 400px;
             margin: 40px auto;
         }
+
+        .register-btn {
+           color: #fff;
+           text-decoration: none;
+           background: #0B5ED7;
+           padding: 10px;
+           border-radius: 7px;
+           font-size: 1.1rem;
+        }
+
+        .register-btn:hover {
+            background: #1b6ce5ff;
+            color: #fff;
+        }
     </style>
 </head>
 <body class="text-center">
@@ -18,7 +32,7 @@
         <h1 class="h3 mb-3">Login</h1>
 
         <?php if ( isset($_GET['incorrect']) ) : ?>
-            <div class="alert alert-warning">
+            <div class="alert alert-danger">
                 Incorrect Email or Password
             </div>
         <?php endif ?>
@@ -43,7 +57,7 @@
         </form>
         <br>
 
-        <a href="register.php">Register</a>
+        <a href="register.php" class="register-btn">Register</a>
     </div>
 </body>
 </html>
