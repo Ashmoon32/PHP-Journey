@@ -27,7 +27,7 @@ class UsersTable
             ";
 
             $statement = $this->db->prepare($query);
-            $statement->excute($data);
+            $statement->execute($data);
 
             return $this->db->prepare($query);
 
