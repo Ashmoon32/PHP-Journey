@@ -1,0 +1,17 @@
+{
+    "name": "ashmoon32/project",
+    "autoload": {
+        "psr-4": {
+            "Ashmoon32\\Project\\": "src/",
+            "Libs\\": "_classes/Libs/",
+            "Helpers\\": "_classes/Helpers/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ashmoon32",
+            "email": "nyeinmaung3021@gmail.com"
+        }
+    ],
+    "require": { }
+}
