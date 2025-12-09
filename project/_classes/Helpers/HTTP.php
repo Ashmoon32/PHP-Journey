@@ -11,7 +11,7 @@ class HTTP
         $url = static::$base . $path;
         if($query) $url .= "?$query";
 
-        header('location: $url');
+        header("location: $url");
         exit();
     }
 }

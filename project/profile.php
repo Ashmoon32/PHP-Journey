@@ -1,17 +1,10 @@
-<?php
+<?php 
 
     session_start();
 
     if(!isset($_SESSION['user'])) {
-        header('location: index.php');
+        header('location: index.php'); // Not allow space betweeen location and colon
         exit();
-    }
-
-    $username = $_SESSION['user']['username'];
-    $photo = "_actions/photos" . $username . ".jpg";
-
-    if (file_exists($photo)) {
-        echo "<img src='$photo' width='200' class='img-thumbnail mb-3'>";
     }
 
 ?>
