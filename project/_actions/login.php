@@ -3,11 +3,19 @@
 session_start();
 
 $email = $_POST['email'];
-$password = $_POST['password'];
+$password = md5( $_POST['password'] );
 
-if ($email === 'ashmoon32@gmail.com' and $password === 'ashmoon32') {
-    $_SESSION['user'] = ['username' => 'Ashmoon'];
-    header('location: ../profile.php');
+$table = new UsersTable(new MySQL());
+
+$user = $table->findByEmailAndPassword($email, $password);
+
+if ( $user ) {
+    if ($user->suspended) {
+        HTTP::redirect("/index.php", "suspended=1");
+    }
+
+    $_SESSION['user'] = $user;
+    HTTP::redirect("/profile.php");
 } else {
-    header('location: ../index.php?incorrect=1');
+    HTTP::redirect("/index.php", "incorrect=1");
 }

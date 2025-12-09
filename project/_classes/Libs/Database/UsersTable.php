@@ -45,4 +45,24 @@ class UsersTable
 
         return $statement->fetchAll();
     }
+
+    public function findByEmailAndPassword($email, $password)
+    {
+        $statement = $this->db->prepare("
+            SELECT users.*, roles.name AS role, roles.value
+            FROM users LEFT JOIN roles
+            ON users.role_id = roles.id
+            WHERE users.email = :email
+            AND users.password = :password
+        ");
+
+        $statement->execute([
+            'email' => $email,
+            'password' => $password
+        ]);
+
+        $row = $statement->fetch();
+
+        return $row ?? false;
+    }
 }
