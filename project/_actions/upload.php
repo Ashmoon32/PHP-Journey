@@ -33,6 +33,7 @@ if($type === "image/jpeg" or $type === "image/png") {
 
     move_uploaded_file($tmp, "photos/$name");
 
+    // Preventing not to Login everytime
     $auth->photo = $name;
 
     HTTP::redirect("/profile.php");
