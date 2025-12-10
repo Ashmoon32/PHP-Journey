@@ -51,11 +51,11 @@ $auth = Auth::check();
                     <td><?= $user->email ?></td>
                     <td><?= $user->phone ?></td>
                     <td>
-                        <?php if ($user->value === '1'): ?>
+                        <?php if ($user->value === 1): ?>
                             <span class="badge bg-secondary">
                                 <?= $user->role ?>
                             </span>
-                        <?php elseif($user->value === '2'): ?>
+                        <?php elseif($user->value === 2): ?>
                             <span class="badge bg-primary">
                                 <?= $user->role ?>
                             </span>
@@ -95,7 +95,7 @@ $auth = Auth::check();
                             </div>
 
                             <?php else: ?>
-                                ###
+                                <span class="text-muted">Not Available</span>
                             <?php endif ?>
 
                     </td>
