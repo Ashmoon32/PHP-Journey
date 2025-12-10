@@ -3,7 +3,7 @@
 include("../vendor/autoload.php");
 
 use Libs\Database\MySQL;
-use Libs\Database\UersTable;
+use Libs\Database\UsersTable;
 use Helpers\Auth;
 use Helpers\HTTP;
 
