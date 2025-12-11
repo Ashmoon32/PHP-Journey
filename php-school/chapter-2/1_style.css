@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: white;
+    background-color: black;
+}
+
+.container {
+    background-color: rgb(66, 64, 64);
+    padding: 20px;
+    line-height: 3rem;
+    border: 2px solid rgb(29, 28, 28);
+    box-shadow: 2px 2px 3px 3px rgb(62, 60, 60),
+        inset 2px 2px 3px 3px rgb(60, 58, 58),
+        -2px -2px -5px -3px rgb(53, 52, 52),
+        inset -2px -2px -5px -3px rgb(59, 58, 58);
+
+}
+
+.result {
+    display: flex;
+    text-align: center;
+    font-size: 30px;
+}
