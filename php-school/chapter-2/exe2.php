@@ -13,7 +13,8 @@
         <input type="number" name="snum" required> <b>Second Number</b> <br><br>
 
         
-    <?php
+        <div style="margin-top:10px; margin-bottom:20px; font-weight:bold; padding:5px;">
+                <?php
 
         if (isset($_GET['operation']) && isset($_GET['fnum']) && isset($_GET['snum']))
     {
@@ -59,6 +60,7 @@
             }
         }
     ?>
+        </div>
 
         <button type="submit" name="operation" value="add">Add</button>
         <button type="submit" name="operation" value="subtract">Subtract</button>
