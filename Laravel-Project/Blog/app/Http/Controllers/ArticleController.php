@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -10,10 +11,16 @@ class ArticleController extends Controller
         // return "Controller - Article List";
         // return view('articles/index');
 
-        $data = [
-            ["id" => 1, "title" => "First Article"],
-            ["id" => 2, "title" => "Second Article"],
-        ];
+        // $data = [
+        //     ["id" => 1, "title" => "First Article"],
+        //     ["id" => 2, "title" => "Second Article"],
+        // ];
+
+        // return view('articles.index', [
+        //     'articles' => $data
+        // ]);
+
+        $data = Article::all();
 
         return view('articles.index', [
             'articles' => $data
