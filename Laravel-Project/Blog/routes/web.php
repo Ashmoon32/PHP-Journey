@@ -36,3 +36,6 @@ Route::get('/articles/detail/{id}', [
 Route::get('/products', [ProductController::class, 'index']);
 
 Route::get('/articles/info/{boldText}', [ArticleController::class, 'info']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
