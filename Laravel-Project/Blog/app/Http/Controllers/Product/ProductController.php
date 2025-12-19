@@ -9,6 +9,11 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return 'Product List - <ul><li>Hamburger</li><li>Coffee</li></ul>';
+        return 'Product List -
+         <ul>
+         <li>Hamburger</li>
+         <li>Coffee</li>
+         </ul>
+         ';
     }
 }

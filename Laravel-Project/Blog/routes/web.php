@@ -34,3 +34,5 @@ Route::get('/articles/detail/{id}', [
 ]);
 
 Route::get('/products', [ProductController::class, 'index']);
+
+Route::get('/articles/info/{boldText}', [ArticleController::class, 'info']);
