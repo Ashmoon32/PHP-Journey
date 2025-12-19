@@ -20,7 +20,13 @@ class ArticleController extends Controller
         //     'articles' => $data
         // ]);
 
-        $data = Article::all();
+        // $data = Article::all();
+
+        // return view('articles.index', [
+        //     'articles' => $data
+        // ]);
+
+        $data = Article::latest()->paginate(5);
 
         return view('articles.index', [
             'articles' => $data
