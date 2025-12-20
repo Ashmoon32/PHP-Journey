@@ -44,4 +44,16 @@ class ArticleController extends Controller
     public function info($boldText) {
         return "Controller - Article Info - <b>$boldText!</b>";
     }
+
+    public function add()
+    {
+        $data = [
+            [ "id" => 1, "name" => "News" ],
+            [ "id" => 2, "name" => "Tech" ],
+        ];
+
+        return view('articles.add', [
+            'categories' => $data
+        ]);
+    }
 }
