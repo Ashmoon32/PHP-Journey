@@ -39,3 +39,9 @@ Route::get('/articles/info/{boldText}', [ArticleController::class, 'info']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/articles/add', [ArticleController::class, 'add']);
+
+Route::post('/articles/add', [ArticleController::class, 'create']);
+
+Route::get('/articles/delete/{id}', [ArticleController::class. 'delete']);
