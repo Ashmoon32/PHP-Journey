@@ -44,4 +44,4 @@ Route::get('/articles/add', [ArticleController::class, 'add']);
 
 Route::post('/articles/add', [ArticleController::class, 'create']);
 
-Route::get('/articles/delete/{id}', [ArticleController::class. 'delete']);
+Route::get('/articles/delete/{id}', [ArticleController::class, 'delete']);
