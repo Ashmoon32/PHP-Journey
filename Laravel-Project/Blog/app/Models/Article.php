@@ -7,9 +7,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Article extends Model
 {
-    //
-    use HasFactory; // 2. Use the trait inside the class
-    
-    // Optional: if you want to allow mass assignment
-    protected $fillable = ['title', 'body', 'category_id'];
+    use HasFactory;
+
+    public function categroy() {
+        // return $this->belongsTo('App\Models\Category');
+        return $this->belongsTo(Category::class);
+    }
+
+    public function comments() {
+        return $this->hasMany('App\Models\Comment');
+
+    }
 }
