@@ -50,6 +50,7 @@ class ArticleController extends Controller
         $data = [
             [ "id" => 1, "name" => "News" ],
             [ "id" => 2, "name" => "Tech" ],
+            [ "id" => 3, "name" => "Personal"],
         ];
 
         return view('articles.add', [
