@@ -16,9 +16,16 @@ class CommentFactory extends Factory
      */
     public function definition(): array
     {
+        // return [
+        //     "content" => $this->faker->paragraph,
+        //     "article_id" => rand(1, 20),
+        //     "user_id" => rand(1, 2),
+        // ];
         return [
-            "content" => $this->faker->paragraph,
-            "article_id" => rand(1, 20),
-        ];
+        "content" => $this->faker->paragraph,
+        // This ensures a User and Article exists for every comment
+        "user_id" => \App\Models\User::factory(), 
+        "article_id" => \App\Models\Article::factory(),
+    ];
     }
 }
