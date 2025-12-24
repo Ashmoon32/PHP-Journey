@@ -10,7 +10,13 @@ class Comment extends Model
 
     public function user()
     {
-        return $this->belongsTo("App\Models\User");
+        return $this->belongsTo("App\Models\User");  
     }
+    
+    protected $fillable = [
+    'content',
+    'article_id',
+    'user_id', // Ensure this is here!
+    ];
 
 }
