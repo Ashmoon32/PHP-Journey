@@ -41,15 +41,28 @@
     // }
     ?>
 
+    <?php
+    function filterByAuthor($books, $author)
+    {
+        $filterBooks = [];
+        foreach ($books as $book) {
+            if ($book["author"] === $author) {
+                $filterBooks[] = $book;
+            }
+        }
+
+        return $filterBooks;
+    }
+
+    ?>
+
     <ul>
-        <?php foreach ($books as $book): ?>
-            <?php if ($book["author"] == "Ashmoon"): ?>
-                <a href="<?php echo $book["purchaseUrl"]; ?>">
-                    <li>
-                        <?php echo $book["name"] . " is written by " . $book["author"]; ?>
-                    </li>
-                </a>
-            <?php endif; ?>
+        <?php foreach (filterByAuthor($books, "Ashmoon") as $book): ?>
+            <a href="<?php echo $book["purchaseUrl"]; ?>">
+                <li>
+                    <?php echo $book["name"] . " by " . $book["author"] . " - " . $book["releaseYear"]; ?>
+                </li>
+            </a>
         <?php endforeach; ?>
     </ul>
 </body>
