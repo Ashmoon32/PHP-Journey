@@ -1,36 +1,70 @@
 <?php
-require_once 'controller.php';
+require 'controller.php';
+
+$result = null;
 
 if (isset($_GET['character']) && !empty($_GET['character'])) {
-    $search = $_GET['character'];
-    $result = searchCharacter($search, $animeCharacters);
-} else {
-    $result = null;
+    $result = searchCharacter($_GET['character'], $animeCharacters);
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Anime Character Details</title>
+    <title>Result</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <h2>Search Result</h2>
-    <?php if ($result != null): ?>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center">
 
-        <h3>Character Details</h3>
-        <?php foreach ($result as $key => $value): ?>
-            <p><strong><?php echo ucfirst($key); ?>:</strong> <?php echo htmlspecialchars($value); ?></p>
-        <?php endforeach; ?>
+    <?php if ($result): ?>
+
+        <!-- Card -->
+        <div class="bg-gray-800 rounded-xl shadow-lg p-6 w-80 space-y-4 animate-fade-in">
+
+            <img src="<?= $result['image']; ?>" class="rounded-lg w-full h-64 object-cover">
+
+            <h2 class="text-xl font-bold">
+                <?= $result['name']; ?>
+            </h2>
+
+            <p class="text-gray-400">
+                Anime: <?= $result['anime']; ?>
+            </p>
+
+            <p>Power: <?= $result['power']; ?></p>
+            <p>Personality: <?= $result['personality']; ?></p>
+
+            <a href="index.php" class="block text-center mt-4 text-purple-400 hover:underline">
+                Search again
+            </a>
+        </div>
+
     <?php else: ?>
-        <p>No character found. Please try again.</p>
+
+        <p>❌ Character not found.</p>
+
     <?php endif; ?>
 
-    <a href="index.php">Back to Search</a>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+
 </body>
 
 </html>
