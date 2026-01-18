@@ -11,14 +11,28 @@
     <?php
     $books = [
         [
-            "name" => "book-1",
-            "author" => "author-1",
+            "name" => "How to breath?",
+            "author" => "Ashmoon",
+            "releaseYear" => "2005",
             "purchaseUrl" => "http://example1.com"
         ],
         [
-            "name" => "book-2",
-            "author" => "author-2",
+            "name" => "The depression",
+            "author" => "Ashmoon",
+            "releaseYear" => "2026(ongoing)",
             "purchaseUrl" => "http://example2.com"
+        ],
+        [
+            "name" => "Easy Loving",
+            "author" => "Win Kyi",
+            "releaseYear" => "2025-2026",
+            "purchaseUrl" => "http://example3.com"
+        ],
+        [
+            "name" => "The Mogger",
+            "author" => "Wai Yan",
+            "releaseYear" => "2004",
+            "purchaseUrl" => "http://example4.com"
         ]
     ];
 
@@ -29,11 +43,13 @@
 
     <ul>
         <?php foreach ($books as $book): ?>
-            <a href="<?php echo $book["purchaseUrl"]; ?>">
-                <li>
-                    <?php echo $book["name"] . " is written by " . $book["author"]; ?>
-                </li>
-            </a>
+            <?php if ($book["author"] == "Ashmoon"): ?>
+                <a href="<?php echo $book["purchaseUrl"]; ?>">
+                    <li>
+                        <?php echo $book["name"] . " is written by " . $book["author"]; ?>
+                    </li>
+                </a>
+            <?php endif; ?>
         <?php endforeach; ?>
     </ul>
 </body>
