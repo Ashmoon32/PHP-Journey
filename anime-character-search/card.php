@@ -44,7 +44,9 @@ if (isset($_GET['character']) && !empty($_GET['character'])) {
     <?php else: ?>
 
         <p>❌ Character not found.</p>
-
+        <a href="index.php" class=" text-purple-400 hover:underline ml-2">
+            Search again
+        </a>
     <?php endif; ?>
 
     <style>
