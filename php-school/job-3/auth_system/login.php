@@ -28,11 +28,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
     <h1>Login Form | Ashmoon</h1>
-    <?php if ($err) {
-        echo "<p style='color:red;'>$error</p>";
-    } else {
-        echo "<p style='color:green;'> Login successfull! </p>";
-    } ?>
+    <?php
+    if ($err) {
+        echo "<p style='color:red;'>$err</p>";
+    }
+    ?>
     <form action="" method="POST">
         <label for="username">Username</label><br>
         <input type="text" name="username" id="username" placeholder="Enter your name" required><br><br>
