@@ -32,6 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($err) {
         echo "<p style='color:red;'>$err</p>";
     }
+
+    if(!isset($_SESSION['username'])) {
+        echo "<p> You have been logouted"
+    }
     ?>
     <form action="" method="POST">
         <label for="username">Username</label><br>

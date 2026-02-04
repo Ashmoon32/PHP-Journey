@@ -22,8 +22,16 @@ if (!isset($_SESSION['username'])) {
         <p>Now you are authenticated.</p>
         <p>What is your agenda today?</p>
         <textarea name="messages" cols="23" rows="3"
-            style="resize:none; border: 2px solid black; border-radius: 10px; padding: 10px"></textarea>
+            style="resize:none; border: 2px solid black; border-radius: 10px; padding: 10px">
+        </textarea><br>
+        <a href="logout.php">
+            <button id="btn">Logout</button>
+        </a>
     </div>
+    <script>
+        let btn = getElementById('btn');
+        btn.onclick()
+    </script>
 </body>
 
 </html>
