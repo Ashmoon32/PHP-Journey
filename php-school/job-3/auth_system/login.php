@@ -33,8 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "<p style='color:red;'>$err</p>";
     }
 
-    if(!isset($_SESSION['username'])) {
-        echo "<p> You have been logouted"
+    if (!isset($_SESSION['username'])) {
+        echo "<p> You have been logouted";
     }
     ?>
     <form action="" method="POST">
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label for="password">Password</label><br>
         <input type="password" name="password" id="password" placeholder="Enter your password" required><br><br>
 
-        <button type="submit">Login</button>
+        <button type="submit">Sign in</button>
     </form>
 </body>
 
