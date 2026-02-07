@@ -19,6 +19,19 @@ session_start();
             padding: 0;
             box-sizing: border-box;
             font-family: "VT323", monospace;
+            background: lightgrey;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
         }
     </style>
 </head>
