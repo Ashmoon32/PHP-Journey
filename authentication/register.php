@@ -32,6 +32,17 @@ session_start();
         form {
             display: flex;
             flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .form-group {
+            width: 100%;
+        }
+
+        .form-group>input {
+            width: 70%;
         }
     </style>
 </head>
@@ -42,15 +53,23 @@ session_start();
         </h1>
         <p>Regsiter below to enter Ashmoon World.</p>
         <form method="POST">
-            <label for="name">Username</label>
-            <input type="text" name="username" id="username" placeholder="Enter your name" required>
+            <div class="form-group">
+                <label for="username">Username</label><br>
+                <input type="text" name="username" id="username" placeholder="Enter your name" required
+                    autocomplete="ashmoon">
+            </div>
 
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="Enter your email" required>
+            <div class="form-group">
+                <label for="email">Email</label><br>
+                <input type="email" name="email" id="email" placeholder="Enter your email" required>
 
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" placeholder="Enter your password" required>
+            </div>
 
+            <div class="form-group">
+                <label for="password">Password</label><br>
+                <input type="password" name="password" id="password" placeholder="Enter your password" required>
+
+            </div>
             <button type="submit">Sign in</button>
         </form>
         <small>Already have an account? <a href="login.php">Sign up</a></small>
