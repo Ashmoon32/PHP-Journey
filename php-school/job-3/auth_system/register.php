@@ -10,7 +10,7 @@
 
 <body>
     <h1>Welcome To the Ashmoon World.</h1>
-    <p>To enter amazing Ashmoon's dashboard, you need an authenticated account. If you don't have one, Register
+    <p>To enter amazing Ashmoon's dashboard, your account need to be an authenticated. If you don't have one, Register
         below🙌👇</p>
     <form method="POST">
         <label for="username">Username</label><br>

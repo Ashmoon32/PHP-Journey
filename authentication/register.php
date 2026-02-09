@@ -11,6 +11,8 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
+
+    <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 
     <style>
@@ -44,6 +46,12 @@ session_start();
         .form-group>input {
             width: 70%;
         }
+
+        .btn,
+        input {
+            padding: 4px;
+            border-radius: 4px;
+        }
     </style>
 </head>
 
@@ -55,8 +63,7 @@ session_start();
         <form method="POST">
             <div class="form-group">
                 <label for="username">Username</label><br>
-                <input type="text" name="username" id="username" placeholder="Enter your name" required
-                    autocomplete="ashmoon">
+                <input type="text" name="username" id="username" placeholder="Enter your name" required>
             </div>
 
             <div class="form-group">
@@ -70,7 +77,7 @@ session_start();
                 <input type="password" name="password" id="password" placeholder="Enter your password" required>
 
             </div>
-            <button type="submit">Sign in</button>
+            <button class="btn" type="submit">Sign in</button>
         </form>
         <small>Already have an account? <a href="login.php">Sign up</a></small>
     </div>
