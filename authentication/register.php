@@ -22,6 +22,7 @@ session_start();
             box-sizing: border-box;
             font-family: "VT323", monospace;
             background: lightgrey;
+            font-size: 20px;
         }
 
         body {
@@ -35,12 +36,15 @@ session_start();
             display: flex;
             flex-direction: column;
             gap: 10px;
-            align-items: flex-start;
+            align-items: center;
             width: 100%;
         }
 
         .form-group {
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .form-group>input {
@@ -51,6 +55,11 @@ session_start();
         input {
             padding: 4px;
             border-radius: 4px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            flex-wrap: wrap;
         }
     </style>
 </head>

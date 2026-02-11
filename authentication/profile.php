@@ -11,11 +11,53 @@ session_start();
     <title>Profile Page | Ashmoon</title>
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "VT323", monospace;
+            background: lightgrey;
+            font-size: 20px;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .form-group {
+            width: 100%;
+            margin-bottom: 3px;
+        }
+
+        .form-group>input {
+            width: 70%;
+        }
+
+        .btn,
+        input {
+            padding: 4px;
+            border-radius: 4px;
+            margin-bottom: 3px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>Login</h1>
+        <h1 style="margin-bottom: 4px;">Login</h1>
 
         <form method="POST">
             <div class="form-group">
