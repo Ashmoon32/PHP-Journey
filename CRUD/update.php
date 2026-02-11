@@ -30,7 +30,7 @@ require_once 'connect.php';
             $name = trim($_POST['name']);
             $color = trim($_POST['color']);
 
-            $sql = "UPDATE fruit SET color = :color WHERE name = :name";
+            $sql = "UPDATE fruits SET color = :color WHERE name = :name";
 
             $stmt = $pdo->prepare($sql);
             $stmt->bindParam(':color', $color);
