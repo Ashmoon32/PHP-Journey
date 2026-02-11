@@ -28,4 +28,5 @@ try {
     echo "An unexpect error occurred! " . $e->getMessage();
 }
 
+require_once 'footer.php';
 ?>

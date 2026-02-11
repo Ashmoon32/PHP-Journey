@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD Operation</title>
+    <title>CRUD Operation | Read</title>
     <style>
         tr:nth-child(even) {
             background-color: #f2f2f2;
