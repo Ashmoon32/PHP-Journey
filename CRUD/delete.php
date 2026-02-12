@@ -21,7 +21,7 @@ require_once 'connect.php';
 
     <?php
     try {
-        if ($_SERVER['REQUEST__METHOD'] == 'POST' && isset($_POST['delete'])) {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete'])) {
             $name = trim($_POST['name']);
 
             $sql = "DELETE FROM fruits WHERE name = :name";
@@ -32,12 +32,14 @@ require_once 'connect.php';
             if ($stmt->rowCount() > 0) {
                 echo "<p style='color: green;'>Fruit deleted successfully.</p>";
             } else {
-                echo "<p style='color: yellow;'>No fruit found with that name.</p>";
+                echo "<p style='color: orange;'>No fruit found with that name.</p>";
             }
         }
     } catch (PDOException $e) {
         echo "<p style='color: red;'>An unexpected error occurred - " . $e->getMessage() . " </p>";
     }
+
+    require_once 'footer.php';
     ?>
 </body>
 
