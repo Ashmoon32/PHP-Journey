@@ -14,10 +14,10 @@ require_once 'connect.php';
 <body>
     <h2>Update fruit by name</h2>
     <form action="" method="POST">
-        <label for="name">Fruit name</label><br>
+        <label for="name">Fruit name (to update)</label><br>
         <input type="text" name="name" id="name" placeholder="Enter fruit name" required><br><br>
 
-        <label for="color">Fruit color</label><br>
+        <label for="color">Fruit New Color</label><br>
         <input type="text" name="color" id="color" placeholder="Enter fruit color" required><br><br>
 
         <input type="submit" name="update" value="Update Fruit">
