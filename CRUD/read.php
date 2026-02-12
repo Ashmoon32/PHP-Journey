@@ -10,14 +10,12 @@ try {
     echo "<table cellpadding ='5' border ='1'> ";
     echo "
       <tr>
-      <th>ID</th>
       <th>Name</th>
       <th>Color</th>
       </tr>
      ";
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo "<tr>";
-        echo "<td>" . htmlspecialchars($row['id']) . "</td>";
         echo "<td>" . htmlspecialchars($row['name']) . "</td>";
         echo "<td>" . htmlspecialchars($row['color']) . "</td>";
         echo "</tr>";
