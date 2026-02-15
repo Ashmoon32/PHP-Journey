@@ -14,6 +14,25 @@
         Category: <input type="text" name="category" required> <br>
         <input type="submit" name="submit" value="Add Product">
     </form>
+
+    <?php
+    if (isset($_POST['submit'])) {
+        try {
+            $pdo = new PDO("mysql:host=localhost;dbname=my_database", "root", "");
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $stmt = $pdo->prepare("INSERT INTO products(name, price, cateogry) VALUES (:name, :price, :category)");
+            $stmt->execute([
+                ':name' => $_POST['name'],
+                ':price' => $_POST['price'],
+                ':category' => $_POST['category']
+            ]);
+            echo "Product inserted successfully!";
+
+        } catch (PDOException $e) {
+            echo "Error " . $e->getMessage();
+        }
+    }
+    ?>
 </body>
 
 </html>
