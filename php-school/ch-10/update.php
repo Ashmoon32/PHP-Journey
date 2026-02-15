@@ -9,7 +9,7 @@
 
 <body>
     <form action="" method="POST">
-        Prodcut ID <input type="number" name="name" required><br>
+        Prodcut ID <input type="number" name="id" required><br>
         New Price <input type="number" name="price" step="0.01" required><br>
         New Category <input type="text" name="category" required><br>
         <input type="submit" name="submit" value="Update Product">
@@ -20,7 +20,7 @@
     if (isset($_POST['submit'])) {
         try {
             $pdo = new PDO("mysql:host=localhost;dbname=my_database", "root", "");
-            $stmt = $pdo->prepare("UPDATE products SET price = :price, category = :category WHERE id = :id");
+            $stmt = $pdo->prepare("UPDATE products SET price = :price , category = :category WHERE id = :id");
             $stmt->execute([
                 ':id' => $_POST['id'],
                 ':price' => $_POST['price'],
