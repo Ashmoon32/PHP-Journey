@@ -20,7 +20,7 @@
         try {
             $pdo = new PDO("mysql:host=localhost;dbname=my_database", "root", "");
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $stmt = $pdo->prepare("INSERT INTO products(name, price, cateogry) VALUES (:name, :price, :category)");
+            $stmt = $pdo->prepare("INSERT INTO products(name, price, category) VALUES (:name, :price, :category)");
             $stmt->execute([
                 ':name' => $_POST['name'],
                 ':price' => $_POST['price'],
@@ -33,6 +33,9 @@
         }
     }
     ?>
+
+    <br>
+    <a href="index.php">View All Products</a>
 </body>
 
 </html>
