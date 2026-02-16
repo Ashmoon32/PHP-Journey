@@ -20,18 +20,20 @@
     if (isset($_POST['submit'])) {
         try {
             $pdo = new PDO("mysql:host=localhost;dbname=my_database", "root", "");
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $stmt = $pdo->prepare("UPDATE products SET price = :price , category = :category WHERE id = :id");
-            $stmt->execute([
+            $success = $stmt->execute([
                 ':id' => $_POST['id'],
                 ':price' => $_POST['price'],
                 ':category' => $_POST['category']
             ]);
-            if ($stmt->rowCount() > 0) {
+            if ($success) {
                 echo "Updated Product!";
-                echo "<a href='index.php'>View All Products</a>";
+
             } else {
                 echo "An unexpected error occurred!";
             }
+            echo "<a href='index.php'>View All Products</a>";
         } catch (PDOException $e) {
             echo "Err" . $e->getMessage();
         }
