@@ -32,10 +32,11 @@
             echo "Error " . $e->getMessage();
         }
     }
+
+    require_once 'footer.php';
     ?>
 
-    <br>
-    <a href="index.php">View All Products</a>
+
 </body>
 
 </html>

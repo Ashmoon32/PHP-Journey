@@ -29,6 +29,8 @@
     } catch (PDOException $e) {
         echo "Error" . $e->getMessage();
     }
+
+    require_once 'footer.php';
     ?>
 </body>
 
