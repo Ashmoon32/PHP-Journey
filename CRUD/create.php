@@ -1,5 +1,6 @@
 <?php
 require_once 'connect.php';
+$title = "Create";
 ?>
 
 <!DOCTYPE html>
