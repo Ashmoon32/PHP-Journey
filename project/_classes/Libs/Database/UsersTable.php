@@ -66,12 +66,12 @@ class UsersTable
         return $row ?? false;
     }
 
-    public function updatePhoto($id, $name) 
+    public function updatePhoto($id, $name)
     {
         $statement = $this->db->prepare("
             UPDATE users SET photo=:name WHERE id = :id
         ");
-        $statement->execute([ 'name' => $name, 'id' => $id ]);
+        $statement->execute(['name' => $name, 'id' => $id]);
 
         return $statement->rowCount();
     }
@@ -82,7 +82,7 @@ class UsersTable
             UPDATE users SET suspended=1 WHERE id = :id
         ");
 
-        $statement->execute([ 'id' => $id ]);
+        $statement->execute(['id' => $id]);
         return $statement->rowCount();
     }
 
@@ -92,7 +92,7 @@ class UsersTable
             UPDATE users SET suspended=0 WHERE id = :id
         ");
 
-        $statement->execute([ 'id' => $id ]);
+        $statement->execute(['id' => $id]);
 
         return $statement->rowCount();
     }
@@ -103,7 +103,7 @@ class UsersTable
             UPDATE users SET role_id = :role WHERE id = :id
         ");
 
-        $statement->execute([ 'id' => $id, 'role' => $role ]);
+        $statement->execute(['id' => $id, 'role' => $role]);
 
         return $statement->rowCount();
     }
@@ -114,7 +114,7 @@ class UsersTable
             DELETE FROM users WHERE id = :id
         ");
 
-        $statement->execute([ 'id' => $id ]);
+        $statement->execute(['id' => $id]);
 
         return $statement->rowCount();
     }
