@@ -2,7 +2,6 @@
 session_start();
 require_once "db.php";
 $message = "";
-
 ?>
 
 
@@ -17,6 +16,9 @@ $message = "";
 </head>
 
 <body>
+    <p style="background-color: aqua, color: black;">
+        <?= $message; ?>
+    </p>
     <h2>Login Page | Ashmoonstar</h2>
     <p>If you want to see the main page, you need to login 🫠🙌, <br> Haha Just kidding 😂😘. <b><i>Just login as Guest
                 dude.
@@ -43,10 +45,22 @@ $message = "";
 
     <?php
 
-    if ($_SERVER['REQUEST_METHOD'] === "POST" && !isset($_POST['submit'])) {
+    if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['submit'])) {
         $name = isset($_POST['name']) ? $_POST['name'] : '';
         $email = isset($_POST['email']) ? $_POST['email'] : '';
         $password = isset($_POST['password']) ? $_POST['password'] : '';
+
+        $query = "INSERT INTO users (name, email, password) VALUES (:name, :email, :password)";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':password', $password);
+        $stmt->execute();
+
+        $message = "Login successfully!🫠🙌";
+        ;
+    } else {
+        $message = "Error: Can't Login!";
     }
 
     ?>
