@@ -14,3 +14,11 @@ $a = "a";
 $b = [1, 2, 3];
 echo strlen($a) . "\n";
 echo count($b);
+
+
+function nothing($nth)
+{
+    return $nth;
+}
+
+echo nothing("Absolutely Do Nothing");
