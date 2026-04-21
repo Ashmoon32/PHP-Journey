@@ -1,24 +1,41 @@
 <?php
 
-include('Library/Helper/Calculator.php');
-
-use Library\Helper\Calculator;
-
-$calc = new Calculator;
-echo $calc->add([1, 2]);
-echo "\n";
-
-// print_r($_SERVER);
-
-$a = "a";
-$b = [1, 2, 3];
-echo strlen($a) . "\n";
-echo count($b);
-
-
-function nothing($nth)
+class Animal
 {
-    return $nth;
+    protected $name;
+
+    public function __construct($name)
+    {
+        $this->name = $name;
+    }
+
+    public function run()
+    {
+        echo $this->name . " is running...";
+    }
 }
 
-echo nothing("Absolutely Do Nothing");
+class Dog extends Animal
+{
+    public function __construct($name, private $color)
+    {
+        parent::__construct($name);
+    }
+
+    public function profile()
+    {
+        echo $this->name . " has " . $this->color . " color. ";
+    }
+}
+
+class cat extends Animal
+{
+    public function run()
+    {
+
+    }
+}
+$dog = new Dog("Bobby", "Black");
+$dog->run();
+
+$dog->profile();
