@@ -894,7 +894,7 @@
         }
     }
 
-    $dog = new Dog("Aung Net");
+    $dog = new Dog("Aung Net", "h");
     $dog->run();
     $dog->bark();
 
